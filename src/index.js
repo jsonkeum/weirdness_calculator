@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+
+import rootReducer from './reducers'
+
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Root from './components/Root';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const rootElement = document.getElementById('root');
+
+// create rootReducer in reducers/index.js then init the store using reducer and thunk middleware for delayed action creators (for API call).
+const store = createStore(
+  rootReducer,
+  applyMiddleware(
+    thunkMiddleware
+  )
+);
+
+//Debug purposes
+store.subscribe(() => {console.log(store.getState())})
+
+// Pass store as prop Root component to consumption by Provider
+ReactDOM.render(
+  <Root store={store} />,
+  rootElement
+);
