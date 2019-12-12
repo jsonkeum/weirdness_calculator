@@ -21,12 +21,27 @@ img {
   align-items: center;
 }
 
+.full-height-column {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
 .margin-top {
   margin-top: 8px;
 }
 
 .max-width {
   width: 100%;
+}
+
+.width-50 {
+  width: 50%;
+  max-width: 50%;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .calculator {
@@ -36,4 +51,24 @@ img {
 .search-result {
   width: auto;
   height: 100%;
+}
+
+.liked-gifs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.gif-wrapper {
+  width: 160px;
+}
+
+.gif {
+  position: relative;
+}
+
+.gif-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }

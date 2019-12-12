@@ -17,7 +17,7 @@ const Calculator = () => {
         <SearchResultContainer />
         <SliderContainer />
       </div>
-
+      <LikedGifsContainer />
     </div>
   )
 }
