@@ -15,6 +15,7 @@ const Calculator = () => {
         <Instructions />
         <SearchContainer />
         <SearchResultContainer />
+        <SliderContainer />
       </div>
 
     </div>

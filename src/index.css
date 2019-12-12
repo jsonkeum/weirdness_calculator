@@ -25,6 +25,10 @@ img {
   margin-top: 8px;
 }
 
+.max-width {
+  width: 100%;
+}
+
 .calculator {
   min-height: 600px;
 }
