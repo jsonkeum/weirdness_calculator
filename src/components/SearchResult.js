@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Loader from './Loader';
+
 import { MAX_GIF_COUNT } from '../config';
 
-const SearchResult = ({ searchResult, isLoading, likedGifs, addLikedGif }) => {
-  
+const SearchResult = ({ searchResult, isLoading, likedGifs, likeNewGif }) => {
   const onClick = () => {
-    addLikedGif(searchResult);
+    if (likedGifs.length < MAX_GIF_COUNT || likedGifs.filter(gif => gif.search === searchResult.search).length) {
+      likeNewGif(searchResult);
+    }
   }
 
   const helpMessage = likedGifs.length < 5 ? 'Enter any word or phrase and click search.' : `You've added ${MAX_GIF_COUNT} Gifs!`;
+
+  if (isLoading) {
+    return <Loader />
+  }
 
   if (searchResult.url) {
     return (
@@ -47,7 +54,7 @@ SearchResult.propTypes = {
       weirdness: PropTypes.number.isRequired
     })
   ).isRequired,
-  addLikedGif: PropTypes.func.isRequired
+  likeNewGif: PropTypes.func.isRequired
 }
 
 export default SearchResult;

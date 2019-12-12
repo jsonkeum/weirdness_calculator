@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { addLikedGif } from '../actions';
+import { likeNewGif } from '../actions';
 
 import SearchResult from '../components/SearchResult'
 
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addLikedGif: (searchResult) => dispatch(addLikedGif(searchResult))
+  likeNewGif: (searchResult) => dispatch(likeNewGif(searchResult))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResult);

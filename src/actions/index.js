@@ -6,14 +6,26 @@ export const updateSearchTerm = (search) => ({
   search
 })
 
+export const resetSearchTerm = () => ({
+  type: 'RESET_SEARCH_TERM'
+})
+
 export const updateSearchResult = (result) => ({
   type: 'UPDATE_SEARCH_RESULT',
   result
 })
 
+export const resetSearchResult = () => ({
+  type: 'RESET_SEARCH_RESULT'
+})
+
 export const updateWeirdness = (weirdness) => ({
   type: 'UPDATE_WEIRDNESS',
   weirdness
+})
+
+export const resetWeirdness = () => ({
+  type: 'RESET_WEIRDNESS'
 })
 
 export const toggleLoader = () => ({
@@ -25,10 +37,24 @@ export const addLikedGif = (gif) => ({
   gif
 })
 
+export const resetLikedGifs = () => ({
+  type: 'RESET_LIKED_GIFS'
+})
+
 export const removeLikedGif = (data) => ({
   type: 'REMOVE_LIKED_GIF',
   url: data.url
 })
+
+// Add gif to liked Gifs array then reset the search settings back to factory.
+export const likeNewGif = (searchResult) => {
+  return (dispatch) => {
+    dispatch(addLikedGif(searchResult))
+    dispatch(resetWeirdness())
+    dispatch(resetSearchResult());
+    dispatch(resetSearchTerm());
+  }
+}
 
 // thunk/API action for getting GIPHY search results
 // data should contain 'search' and 'weirdness' from UI/UX

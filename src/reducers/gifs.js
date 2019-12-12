@@ -8,6 +8,8 @@ export const likedGifs = (state = [], action) => {
       ]
     case 'REMOVE_LIKED_GIF':
       return state.filter(gif => gif.url !== action.url);
+    case 'RESET_LIKED_GIFS':
+      return [];    
     default:
       return state;
   }

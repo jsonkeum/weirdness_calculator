@@ -11,7 +11,7 @@ const Calculator = () => {
   
   return (
     <div className="flex calculator">
-      <div className="container">
+      <div className="container width-50 full-height-column">
         <Instructions />
         <SearchContainer />
         <SearchResultContainer />
