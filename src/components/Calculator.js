@@ -14,7 +14,7 @@ const Calculator = () => {
       <div className="container">
         <Instructions />
         <SearchContainer />
-
+        <SearchResultContainer />
       </div>
 
     </div>

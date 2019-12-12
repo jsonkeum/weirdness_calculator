@@ -20,6 +20,16 @@ export const toggleLoader = () => ({
   type: 'TOGGLE_LOADER'
 })
 
+export const addLikedGif = (gif) => ({
+  type: 'ADD_LIKED_GIF',
+  gif
+})
+
+export const removeLikedGif = (data) => ({
+  type: 'REMOVE_LIKED_GIF',
+  url: data.url
+})
+
 // thunk/API action for getting GIPHY search results
 // data should contain 'search' and 'weirdness' from UI/UX
 export const getSearchResults = (data) => {
