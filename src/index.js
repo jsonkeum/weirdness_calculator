@@ -20,7 +20,7 @@ const store = createStore(
 );
 
 //Debug purposes
-store.subscribe(() => {console.log(store.getState())})
+//store.subscribe(() => {console.log(store.getState())})
 
 // Pass store as prop Root component to consumption by Provider
 ReactDOM.render(

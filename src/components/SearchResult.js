@@ -6,6 +6,7 @@ import Loader from './Loader';
 import { MAX_GIF_COUNT } from '../config';
 
 const SearchResult = ({ searchResult, isLoading, likedGifs, likeNewGif }) => {
+
   const onClick = () => {
     if (likedGifs.length < MAX_GIF_COUNT || likedGifs.filter(gif => gif.search === searchResult.search).length) {
       likeNewGif(searchResult);

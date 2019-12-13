@@ -40,6 +40,16 @@ img {
   max-width: 50%;
 }
 
+.nav-button a {
+  opacity: 0.5;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-button .active {
+  opacity: 1;
+}
+
 .text-center {
   text-align: center;
 }
@@ -57,6 +67,12 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.gif-wrapper-score {
+  width: 20%;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .gif-wrapper {

@@ -35,7 +35,7 @@ const Slider = ({ search, weirdness, getSearchResults, updateWeirdness }) => {
           value={weirdness}
           onChange={updateWeirdness}/>
       </div>
-      <p>Weirdness: { weirdness }</p>
+      <p>Weirdness: {weirdness}</p>
     </div>
   )
 }

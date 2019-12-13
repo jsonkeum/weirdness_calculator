@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import Gif from './Gif'
 
@@ -23,8 +24,13 @@ const LikedGifs = ({ likedGifs, removeLikedGif }) => {
         }
       </div>
       <div className="text-center margin-top">
-        <button>
+        <button className="nav-button">
+          <NavLink 
+            exact
+            to='/results'
+            isActive={() => likedGifs.length === 5}>
             CALCULATE MY WEIRDNESS SCORE
+          </NavLink>
         </button>
         { remainingMessage }
       </div>

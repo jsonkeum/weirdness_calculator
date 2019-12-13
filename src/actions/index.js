@@ -56,6 +56,17 @@ export const likeNewGif = (searchResult) => {
   }
 }
 
+// Reset app and start over
+// Turns out when the state resets, the Score UI component will trigger a redirect to main page in response.
+export const startOver = () => {
+  return (dispatch) => {
+    dispatch(resetLikedGifs());
+    dispatch(resetWeirdness())
+    dispatch(resetSearchResult());
+    dispatch(resetSearchTerm());
+  }
+}
+
 // thunk/API action for getting GIPHY search results
 // data should contain 'search' and 'weirdness' from UI/UX
 export const getSearchResults = (data) => {
