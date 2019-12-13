@@ -61,6 +61,7 @@ img {
 .search-result {
   width: auto;
   height: 100%;
+  max-height: 400px;
 }
 
 .liked-gifs {
